@@ -1,47 +1,24 @@
-# Astro Starter Kit: Minimal
+# Homestuck ATCG Web
+This is a website documenting the rules and cards for the Homestuck: Atypical Card Game.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Usage
+todo.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+News posts will be reflected in the RSS feed, so people can follow updates to the site. There's probably a Discord bot that can subscribe to that too.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Updating the Card Database
+also todo.
 
-## 🚀 Project Structure
+i think you were using a tool that can export the cards to excel? this can process the CSV...so maybe it can be as easy as updating that? i need a sample of what it gives you -- hoping it's like a zip file with the CSV + card art. 
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tech
+This is build with the following components:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- [Astro](https://astro.build/), a framework for building static sites
+- [TailwindCSS](https://tailwindcss.com/), a CSS framework
+- [GitHub](https://github.com), which stores the source code and runs the Astro builds to turn this into a heap of HTML
+- Something, where it's hosted 
+  - idk if you want to stick with neocities, put it on your own server, or what.
+  - It's Just HTML(tm), so it can live anywhere.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Credits

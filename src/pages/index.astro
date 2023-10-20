@@ -1,16 +1,9 @@
 ---
-
+import SiteLayout from '../layouts/SiteLayout.astro'
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<SiteLayout>
+	<h1 class="sr-only">Home</h1>
+	<p class="mb-4"><span class="underline">Homestuck: Atypical Card Game</span> is a <a class="italic" href="http://www.homestuck.com/">Homestuck</a> fan-work.</p>
+	<p class="mb-4">"Homestuck ATCG" is a competitive card-based game for 2-5 players-- similiar to a collectible/trading card game, but with a deck-building mechanic that utilizes point-buy (instead of randomized booster packs.)</p>
+	<p class="mb-4">The game utilizes characters and themes from the Homestuck webcomic and franchise by Andrew Hussie.</p>
+</SiteLayout>
