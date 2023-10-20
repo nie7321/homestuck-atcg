@@ -1,0 +1,15 @@
+---
+import SiteLayout from './SiteLayout.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+<SiteLayout title={title}>
+    <div>
+        <slot />
+    </div>
+    <div>div for nav</div>
+</SiteLayout>
