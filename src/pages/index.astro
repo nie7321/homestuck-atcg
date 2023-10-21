@@ -7,12 +7,30 @@ import SiteLayout from '../layouts/SiteLayout.astro'
 	<p class="mb-5">"Homestuck ATCG" is a competitive card-based game for 2-5 players-- similar to a collectible/trading card game, but with a deck-building mechanic that utilizes point-buy (instead of randomized booster packs.)</p>
 	<p class="mb-5">The game utilizes characters and themes from the Homestuck webcomic and franchise by Andrew Hussie.</p>
 
-	<div class="text-center">
-		<p class="mb-5">Current Build: Pre-Alpha Play-Test V3</p>
-		<p class="mb-5">==>
-			<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3007938849" class="underline text-web-blue">
-				 Tabletop Simulator Workshop Download
-			</a>
-	</p>
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-y-16 pt-4">
+		<div>
+			<h2 class="text-2xl border-b-2 border-lavender border-dashed mb-4">Current Build</h2>
+			<p>Pre-Alpha Play-Test V3</p>
+			<p class="text-sm mb-10">October 10th 2023</p>
+			<div class="text-2xl flex">
+				<span class="pr-2">==></span>
+				<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3007938849" class="underline text-web-blue">
+					Tabletop Simulator Workshop Download
+				</a>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-2xl border-b-2 border-lavender border-dashed mb-4">Trailer</h2>
+			<iframe
+				class="aspect-video w-full"
+				src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=IxOhMrUKuNQGdPN1&amp;controls=0"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			></iframe>
+			<p class="text-xs mt-5">(this is meant to be your SAHCon video, but i dunno if you have it standalone on YT right now)</p>
+		</div>
 	</div>
 </SiteLayout>
