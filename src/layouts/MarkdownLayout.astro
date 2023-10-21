@@ -8,6 +8,7 @@ interface Props {
 const { title } = Astro.props.frontmatter || Astro.props;
 ---
 <SiteLayout title={title}>
+    <h1 class="text-4xl mb-5">{ title }</h1>
     <div class="markdown-content">
         <slot />
     </div>

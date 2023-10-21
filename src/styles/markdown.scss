@@ -5,6 +5,10 @@
 * Copyright (c) 2021 Robert Guss. Used under the MIT License <https://github.com/robertguss/Astro-Theme-Creek/blob/master/LICENSE>.
 */
 .markdown-content {
+  h1, h2, h3 {
+    @apply underline;
+  }
+
   h1 {
     @apply uppercase font-bold leading-none;
     margin-bottom: 1em;
@@ -17,7 +21,7 @@
   }
 
   h2 {
-    @apply text-3xl font-bold leading-none mt-12 py-6 tracking-tight;
+    @apply text-3xl font-bold leading-none mt-6 py-6 tracking-tight;
   }
 
   h3 {
