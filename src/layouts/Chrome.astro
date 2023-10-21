@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../images/HSATCG_Logo.png';
+import Navigation from './Navigation.astro';
+
+interface Props {
+    title?: string;
+    // activePath?: string;
+}
+
+const title = Astro.props.title;
+const headTitle = (title ? `${title} | ` : '') + 'Homestuck: Atypical Card Game';
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{headTitle}</title>
+</head>
+<body class="font-courier font-bold text-xl bg-lavender">
+    <header class="flex max-w-5xl mx-auto">
+        <div>
+            <Image src={logo} width="140px" alt="ATCG Logo" />
+        </div>
+        <Navigation/>
+    </header>
+
+    <slot />
+</body>
+</html>

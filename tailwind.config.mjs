@@ -2,10 +2,16 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		fontFamily: {
-			'courier': ['courier'],
+		extend: {
+			fontFamily: {
+				'courier': ['courier'],
+			},
+			colors: {
+				'lavender': '#c1c1d7',
+				'green-sun': '#6FF373',
+				'dark-green': '#407962',
+			},
 		},
-		extend: {},
 	},
 	plugins: [],
 }

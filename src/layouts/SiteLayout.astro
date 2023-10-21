@@ -1,34 +1,14 @@
 ---
+import Chrome from './Chrome.astro';
+
 interface Props {
     title?: string;
-    // activePath?: string;
 }
 
-const title = Astro.props.title;
-const headTitle = (title ? `${title} | ` : '') + 'Homestuck: Atypical Card Game';
+const { title } = Astro.props;
 ---
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{headTitle}</title>
-    </head>
-    <body class="font-courier font-bold text-xl">
-        <span>Homestuck: Atypical Card Game</span>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/Rules">Rule Book</a>
-            <a href="/Rules_BossMode">Rule Book: Boss Mode</a>
-            <a href="/Cards1">Card Database</a>
-            <a href="/Credits">Credits</a>
-            <a href="/Set1">001- The Opening Note</a>
-        </nav>
-        <hr>
-        <h1>{title}</h1>
-        <main>
-            <slot />
-        </main>
-    </body>
-</html>
+<Chrome title={title}>
+    <main class="max-w-5xl mt-20 mb-20 py-6 px-4 mx-auto bg-white">
+        <slot />
+    </main>
+</Chrome>
