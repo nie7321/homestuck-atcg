@@ -8,8 +8,7 @@ interface Props {
 const { title } = Astro.props.frontmatter || Astro.props;
 ---
 <SiteLayout title={title}>
-    <div>
+    <div class="markdown-content">
         <slot />
     </div>
-    <div>div for nav</div>
 </SiteLayout>

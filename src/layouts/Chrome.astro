@@ -5,6 +5,7 @@ import NavLink from '../components/NavLink.astro'
 import NavDropdown from '../components/NavDropdown.astro'
 import DiscordLogo from "../images/discord.svg";
 import NavDropdownLink from "../components/NavDropdownLink.astro";
+import '../styles/markdown.scss';
 
 interface Props {
     title?: string;
@@ -49,8 +50,6 @@ const headTitle = (title ? `${title} | ` : '') + 'Homestuck: Atypical Card Game'
                 <img src={DiscordLogo.src} aria-hidden="true" class="inline-block mr-1" style="width: 1.2rem;">
                 Discord
             </NavLink>
-
-
         </nav>
     </header>
 
