@@ -10,6 +10,7 @@ export default {
 				'lavender': '#c1c1d7',
 				'green-sun': '#6FF373',
 				'dark-green': '#407962',
+				'web-blue': '#0000EE;'
 			},
 		},
 	},
