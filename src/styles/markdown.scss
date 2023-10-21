@@ -75,7 +75,7 @@
   }
 
   ul:not(.list-none) {
-    @apply pl-0 list-disc ml-10 mb-8 text-lg;
+    @apply pl-0 list-disc ml-10 text-lg;
 
     li {
       @apply mb-1;
@@ -83,7 +83,7 @@
   }
 
   ol {
-    @apply pl-0 list-decimal ml-10 mb-8 text-lg;
+    @apply pl-0 list-decimal ml-10 text-lg;
 
     li {
       @apply mb-1;
@@ -138,19 +138,12 @@
       @apply leading-normal;
     }
   }
+
+  abbr {
+    @apply underline underline-offset-4 decoration-2 decoration-dotted italic;
+  }
 }
 
 .content section>*:first-child {
   @apply mt-0 pt-0;
-}
-
-
-.personality-formal .content {
-  h1 {
-    @apply font-black normal-case;
-  }
-
-  >p {
-    @apply leading-normal;
-  }
 }
