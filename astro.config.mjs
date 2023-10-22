@@ -15,8 +15,8 @@ const createSROnlyLabel = (text) => {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nie7321.github.io/',
-  base: '/homestuck-atcg/',
+  site: 'https://nie7321.github.io',
+  base: '/homestuck-atcg',
   integrations: [tailwind(), alpinejs()],
   markdown: {
     remarkPlugins: [remarkToc],
