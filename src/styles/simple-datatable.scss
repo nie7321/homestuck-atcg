@@ -1,0 +1,23 @@
+.datatable-table tr:nth-child(even) td {
+  @apply bg-gray-100;
+}
+
+.datatable-search .datatable-input[type=search] {
+  @apply border;
+}
+
+.datatable-column-filter-menu {
+  @apply px-4 py-2 text-sm;
+}
+
+.datatable-search {
+  @apply w-full flex justify-between pb-2;
+}
+
+.datatable-column-filter-button:hover {
+  @apply bg-gray-100;
+}
+
+.datatable-column-filter-button:after {
+  content: " Select Columns";
+}

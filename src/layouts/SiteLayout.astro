@@ -3,12 +3,14 @@ import Chrome from './Chrome.astro';
 
 interface Props {
     title?: string;
+    wide?: boolean;
 }
 
 const { title } = Astro.props.frontmatter || Astro.props;
+const wide = Astro.props.wide || false;
 ---
 <Chrome title={title}>
-    <main class="max-w-5xl mt-20 mb-20 py-6 px-4 mx-auto bg-white">
+    <main class="mt-20 mb-20 py-6 px-4 mx-auto bg-white" class:list={ {'max-w-5xl': !wide, 'max-w-7xl': wide } }>
         <slot />
     </main>
 </Chrome>
