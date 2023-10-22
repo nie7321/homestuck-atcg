@@ -1,7 +1,7 @@
 # Homestuck ATCG Web
 This is a proof-of-concept responsive website documenting the rules and cards for the Homestuck: Atypical Card Game. The proof-of-concept site is available here:
 
-- https://nie7321.github.io/homestuck-atcg/
+- https://atcg.godless-internets.org
 
 ## Usage
 There are two types of [pages](./src/pages): 
