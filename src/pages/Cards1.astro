@@ -11,6 +11,7 @@ const cards = parse(cardCsv, {
 });
 ---
 <SiteLayout title="Card Database" wide=true>
+    <h1 class="sr-only">Cards</h1>
     <div class="overflow-x-auto">
         <table id="cards" class="text-sm">
             <thead>
@@ -44,4 +45,7 @@ const cards = parse(cardCsv, {
     });
 
     addColumnFilter(dt);
+
+    document.querySelector('.datatable-search .datatable-input').setAttribute('aria-label', 'Search');
+    document.querySelector('nav.datatable-pagination').setAttribute('aria-label', 'Card Page');
 </script>
