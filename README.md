@@ -16,7 +16,7 @@ I took a gander at [the nandeck Excel spreadsheet](https://discord.com/channels/
 
 I'm not sure if you have an easy way to export them all as one CSV in NanDeck. The set & card number isn't in there right now (and I think a few more stats?). 
 
-It also needs a way to get the card images. Not sure what/how NanDeck exports those. But if we can get the card number in the CSV and the images are named after the card numbers, they could be tied together.
+It also needs a way to get the card images. Not sure what/how NanDeck exports those. But if we can get the card number in the CSV and the images are named after the card numbers, they could be tied together. Which means it could be very easy to update :eyes:
 
 ### Site Layout, Etc
 The layouts are kept in `src/layouts`. The `Chrome.astro` file is the "chrome" of the site: the nav bar and some other miscellany. 
@@ -26,6 +26,11 @@ The `SiteLayout` is for use with `.astro` files. The `MarkdownLayout` is for use
 There are art assets in `src/images`.
 
 A small amount of CSS can be found in `src/styles`. But the site mostly uses Tailwind, which isn't written like traditional CSS because developers have to make everything difficult and painful.
+
+### Deployment
+Changes made on GitHub will be automatically deployed by an [Action](https://github.com/nie7321/homestuck-atcg/actions). The action runs Astro's process to turn all the files into some HTML/CSS/JS files and send them to a webserver.
+
+Right now, the site is deploying to my account's GitHub Pages. But [the prepared HTML files](https://github.com/nie7321/homestuck-atcg/tree/gh-pages) can be delivered anywhere.
 
 ## Tech
 This is build with the following components:
@@ -38,6 +43,16 @@ This is build with the following components:
 - *Something*, where it's hosted 
   - idk if you want to stick with neocities, put it on your own server, or what.
   - It's Just HTML(tm), so it can live anywhere.
+
+### Local Development
+If you have node/yarn installed already:
+
+```sh
+yarn install
+yarn run dev
+```
+
+The site should start on `http://localhost:4321` or something. It will tell you the correct URL. Changes should be reflected in the browser immediately.
 
 ## Credits
 - Discord logo vector by [Gil Barbara](https://github.com/gilbarbara/logos). Used under the CC0 license.
