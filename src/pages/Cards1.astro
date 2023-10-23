@@ -11,27 +11,29 @@ const cards = parse(cardCsv, {
 });
 ---
 <SiteLayout title="Card Database" wide=true>
-    <table id="cards" class="text-sm">
-        <thead>
-        <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Subtitle</th>
-            <th scope="col" data-type="number">Base Power</th>
-            <th scope="col" data-hidden="true">Draw Boost</th>
-            <th scope="col" data-hidden="true">Max Damage</th>
-            <th scope="col" data-type="number">Stars</th>
-            <th scope="col" data-hidden="true">Game Text</th>
-            <th scope="col" data-hidden="true">Flavorlogue</th>
-            <th scope="col">Art Credit</th>
-            <th scope="col">Pictures</th>
-            <th scope="col" data-hidden="true">Set Release</th>
-            <th scope="col" data-hidden="true">Card Number</th>
-        </tr>
-        </thead>
-        <tbody>
-            { cards.map((card) => <CardRow card={card} />) }
-        </tbody>
-    </table>
+    <div class="overflow-x-auto">
+        <table id="cards" class="text-sm">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Subtitle</th>
+                <th scope="col" data-type="number">Base Power</th>
+                <th scope="col" data-hidden="true">Draw Boost</th>
+                <th scope="col" data-hidden="true">Max Damage</th>
+                <th scope="col" data-type="number">Stars</th>
+                <th scope="col" data-hidden="true">Game Text</th>
+                <th scope="col" data-hidden="true">Flavorlogue</th>
+                <th scope="col">Art Credit</th>
+                <th scope="col">Pictures</th>
+                <th scope="col" data-hidden="true">Set Release</th>
+                <th scope="col" data-hidden="true">Card Number</th>
+            </tr>
+            </thead>
+            <tbody>
+                { cards.map((card) => <CardRow card={card} />) }
+            </tbody>
+        </table>
+    </div>
 </SiteLayout>
 
 <script>
