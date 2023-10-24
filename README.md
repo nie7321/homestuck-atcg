@@ -56,3 +56,4 @@ The site should start on `http://localhost:4321` or something. It will tell you 
 
 ## Credits
 - Discord logo vector by [Gil Barbara](https://github.com/gilbarbara/logos). Used under the CC0 license.
+- Table of contents generator based on a blog post by [Kevin Lee Drum](https://kld.dev/building-table-of-contents/).
