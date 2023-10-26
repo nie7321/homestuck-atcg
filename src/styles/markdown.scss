@@ -5,6 +5,23 @@
 * Copyright (c) 2021 Robert Guss. Used under the MIT License <https://github.com/robertguss/Astro-Theme-Creek/blob/master/LICENSE>.
 */
 .markdown-content {
+  /**
+   * This is a trick so the ToC will account for the height of the fixed header.
+   *
+   * Otherwise, the browser will scroll to the anchor and leave it underneath the nav bar, which is not quite what
+   * we wanted.
+   *
+   * The 115px is a "good enough" figure I came up with based on the heights of the bar on various screen sizes. This
+   * will reliably deliver users to the correct part of the page.
+   */
+  [id]::before {
+    content: '';
+    display: block;
+    height:      115px;
+    margin-top: -115px;
+    visibility: hidden;
+  }
+
   h1, h2, h3 {
     @apply underline;
   }
