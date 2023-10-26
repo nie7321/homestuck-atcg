@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
-import remarkToc from 'remark-toc';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { toString } from 'hast-util-to-string'
@@ -17,7 +16,6 @@ const createSROnlyLabel = (text) => {
 export default defineConfig({
   integrations: [tailwind(), alpinejs()],
   markdown: {
-    remarkPlugins: [remarkToc],
     rehypePlugins: [
       rehypeHeadingIds,
       [

@@ -9,7 +9,7 @@ There are two types of [pages](./src/pages):
 - `.astro` files, which are for writing HTML + Javascript. These are used for the, uh, artisan-crafted websights.
 - `.md` files, which you can write in Markdown and most of the HTML is handled for you. This is ideal for the rules, where you wanna focus on content and don't need a ton of Pretty Websights.
 
-When writing `.md` files, the headers (`## This is a Second-Level header`) can be turned into a table of contents. Just insert a `## Table of Contents` header and it'll generate it for you.
+When writing `.md` files, the headers (`## This is a Second-Level header`) will be used for the table of contents.
 
 ### Updating the Card Database
 I took a gander at [the nandeck Excel spreadsheet](https://discord.com/channels/1097910841770262600/1097911414548594698/1134311635855605790) and saved the first tab as a CSV. When the site is deployed, it generates a `<table>` from that. So as you add cards, it SHOULD be as easy as updating [the CSV file][./src/cards/cards.csv]?

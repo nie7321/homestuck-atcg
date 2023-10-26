@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.1",
+    "@astrojs/markdown-remark": "^3.3.0",
     "@astrojs/tailwind": "^5.0.2",
     "@types/alpinejs": "^3.0.0",
     "alpinejs": "^3.0.0",
@@ -19,7 +20,6 @@
     "hast-util-to-string": "^3.0.0",
     "hastscript": "^8.0.0",
     "rehype-autolink-headings": "^7.0.0",
-    "remark-toc": "^9.0.0",
     "sass": "^1.69.4",
     "simple-datatables": "^8.0.0",
     "tailwindcss": "^3.0.24"
