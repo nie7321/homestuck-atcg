@@ -5,23 +5,6 @@
 * Copyright (c) 2021 Robert Guss. Used under the MIT License <https://github.com/robertguss/Astro-Theme-Creek/blob/master/LICENSE>.
 */
 .markdown-content {
-  h1, h2, h3, h4, h5, h6 {
-    a {
-      font-size: .85em;
-      margin-left: -0.5em;
-      padding-right: 0.23em;
-      margin-top: 0.125em;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-      @apply opacity-0 no-underline float-left;
-    }
-
-    a:hover {
-      @apply opacity-100 text-web-blue no-underline;
-    }
-  }
-
   h1, h2, h3 {
     @apply underline;
   }
