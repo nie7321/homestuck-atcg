@@ -26,35 +26,37 @@ const headTitle = (title ? `${title} | ` : '') + 'Homestuck: Atypical Card Game'
     <title>{headTitle}</title>
 </head>
 <body class="font-courier font-bold text-xl bg-lavender">
-    <header x-data="{ open: false }" class="flex flex-col max-w-5xl mx-auto md:items-center md:justify-between px-4 md:px-0 md:flex-row">
-        <div class="py-4 flex flex-row items-center justify-between">
-            <a href="/" class="hidden md:block"><Image src={logo} class="w-[100px] pr-3" alt="ATCG Logo" /></a>
-            <a href="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Homestuck:<br>Atypical Card Game</a>
-            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-                <span class="sr-only">Open Navigation Menu</span>
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </button>
-        </div>
-        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            <NavLink href="/">Home</NavLink>
-            <NavDropdown label="Rules">
-                <NavDropdownLink href="/Rules">Rule Book</NavDropdownLink>
-                <NavDropdownLink href="/Rules_BossMode">Boss Mode</NavDropdownLink>
-            </NavDropdown>
-            <NavDropdown label="Sets">
-                <NavDropdownLink href="/Set1">001- The Opening Note</NavDropdownLink>
-                <NavDropdownLink href="/Cards">Card Database</NavDropdownLink>
-            </NavDropdown>
-            <NavLink href="/Credits">Credits</NavLink>
-            <NavLink href="https://discord.gg/UYvRMQhPs3">
-                <img src={DiscordLogo.src} aria-hidden="true" class="inline-block mr-1" style="width: 1.2rem;">
-                Discord
-            </NavLink>
-        </nav>
-    </header>
+    <div class="sticky top-0 bg-lavender">
+        <header x-data="{ open: false }" class="flex flex-col max-w-5xl mx-auto md:items-center md:justify-between px-4 md:px-0 md:flex-row">
+            <div class="pt-4 pb-2 flex flex-row items-center justify-between">
+                <a href="/" class="hidden md:block"><Image src={logo} class="w-[100px] pr-3" alt="ATCG Logo" /></a>
+                <a href="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Homestuck:<br>Atypical Card Game</a>
+                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <span class="sr-only">Open Navigation Menu</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <NavLink href="/">Home</NavLink>
+                <NavDropdown label="Rules">
+                    <NavDropdownLink href="/Rules">Rule Book</NavDropdownLink>
+                    <NavDropdownLink href="/Rules_BossMode">Boss Mode</NavDropdownLink>
+                </NavDropdown>
+                <NavDropdown label="Sets">
+                    <NavDropdownLink href="/Set1">001- The Opening Note</NavDropdownLink>
+                    <NavDropdownLink href="/Cards">Card Database</NavDropdownLink>
+                </NavDropdown>
+                <NavLink href="/Credits">Credits</NavLink>
+                <NavLink href="https://discord.gg/UYvRMQhPs3">
+                    <img src={DiscordLogo.src} aria-hidden="true" class="inline-block mr-1" style="width: 1.2rem;">
+                    Discord
+                </NavLink>
+            </nav>
+        </header>
+    </div>
 
     <slot />
 </body>
