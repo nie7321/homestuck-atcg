@@ -8,9 +8,6 @@ I'm working on updating terminology, but the concepts are the same.
 
 Rule Book Build: Pre-Alpha Play-Test 0.2 (Updated: June 27, 2023)
 
-## Table of Contents
-<!-- The 'Table of Contents' header is magic; it'll generate a ToC based on the headers. You don't need to put anything in here. -->
-
 ## Basic Concepts
 The game consists of 2 to 5 players competing against each other to be the single winner. The winner is decided by the player with the most <abbr>Victory Points</abbr> at the end of the game. Each player will have a <abbr>Main Deck</abbr> that consists of 48 cards, and a single, additional special Planet Card. Players assemble their deck before the game begins.
 
