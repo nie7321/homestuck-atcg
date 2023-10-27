@@ -9,6 +9,15 @@ const cards = parse(cardCsv, {
     columns: true,
     skip_empty_lines: true
 });
+
+const cardArt = await Astro.glob('../cards/images/*.png');
+
+const fileNameExtractor = /\/src\/cards\/images\/(.*)\?/;
+const artCollection = Object.fromEntries(cardArt.map((art) => {
+    const imageName = art.default.src.match(fileNameExtractor)[1];
+
+    return [imageName, art.default];
+}));
 ---
 <SiteLayout title="Card Database" wide=true>
     <h1 class="sr-only">Cards</h1>
@@ -31,7 +40,7 @@ const cards = parse(cardCsv, {
             </tr>
             </thead>
             <tbody>
-                { cards.map((card) => <CardRow card={card} />) }
+                { cards.map((card) => <CardRow card={card} artCollection={artCollection} />) }
             </tbody>
         </table>
     </div>
