@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getImage } from "astro:assets";
+import CardNotFound from "../images/card-not-found.svg";
 
 interface Props {
     artCollection: {
@@ -8,17 +9,17 @@ interface Props {
     };
     card: {
         TITLE: string;
-        SUBTITLE: string;
-        POWER: string;
-        ENTER: string;
-        TAGS: string;
-        'MAIN TEXT': string;
-        FLAVOR: string;
-        ART: string;
-        CREDIT: string;
-        STAR: string;
-        AMOUNT: string;
-        TEMPLATE: string;
+        subtitle: string;
+        Power: string;
+        'Enter Cost': string;
+        Tags: string;
+        'Game Text': string;
+        Flavorlogue: string;
+        Stars: string;
+        'Art Credit': string;
+        Picture: string;
+        'Set Release': string;
+        'Card Number': string;
         [propName: any]: any
     };
 }
@@ -30,12 +31,16 @@ const cardIdentifier = 'Set1_Planet2';
 
 // Most cards have 1, but planets have 2, so we're using an array to deal with em.
 let cardArt = [
-    artCollection[`${cardIdentifier}.png`],
-    artCollection[`${cardIdentifier}b.png`],
+    artCollection[card.Picture],
+    // artCollection[`${cardIdentifier}b.png`],
 ];
 
 cardArt = await Promise.all(
     cardArt.map(async (art) => {
+        if (! art) {
+            art = CardNotFound;
+        }
+
         const publicImage = await getImage({src: art});
 
         return {
@@ -47,19 +52,19 @@ cardArt = await Promise.all(
 ---
 <tr>
     <td>{card.TITLE}</td>
-    <td>{card.SUBTITLE}</td>
-    <td>{card.POWER}</td>
-    <td>db</td>
-    <td>md</td>
-    <td>{card.STAR}</td>
-    <td>{card['MAIN TEXT']}</td>
-    <td>{card.FLAVOR}</td>
-    <td>{card.CREDIT}</td>
+    <td>{card.subtitle}</td>
+    <td>{card.Power}</td>
+    <td>{card['Enter Cost']}</td>
+    <td>{card.Tags}</td>
+    <td>{card['Game Text']}</td>
+    <td>{card.Flavorlogue}</td>
+    <td>{card.Stars}</td>
+    <td>{card['Art Credit']}</td>
     <td>
         <div class="flex flex-row">
             { cardArt.map((image) => <a class="ml-4" href={ image.public.src } target="_blank"><Image src={ image.asset } width="34" height="48" alt="Card {card.TITLE}"/></a>) }
         </div>
     </td>
-    <td>001 The Opening Note</td>
-    <td>XXX-Y</td>
+    <td>{card['Set Release']}</td>
+    <td>{card['Card Number']}</td>
 </tr>
