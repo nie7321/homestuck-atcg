@@ -1,16 +1,16 @@
 ---
-import SiteLayout from "../layouts/SiteLayout.astro";
-import CardRow from "../components/CardRow.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import CardRow from "../../components/CardRow.astro";
 import { readFileSync } from 'node:fs';
 import { parse } from 'csv-parse/sync';
 
-const cardCsv = readFileSync('./src/cards/cards.csv', { encoding: 'utf-8' });
+const cardCsv = readFileSync('./src/cards/characters.csv', { encoding: 'utf-8' });
 const cards = parse(cardCsv, {
     columns: true,
     skip_empty_lines: true
 });
 
-const cardArt = await Astro.glob('../cards/images/*.png');
+const cardArt = await Astro.glob('../../cards/images/*.png');
 
 /** When building for real, the filenames will contain a cache-buster segment, e.g. Set1_Chara001.3c3d8a15.png */
 const cacheBusterExtractor = /(\..*)\./;
