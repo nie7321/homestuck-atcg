@@ -1,29 +1,14 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import CardRow from "../../components/CardRow.astro";
-import { readFileSync } from 'node:fs';
-import { parse } from 'csv-parse/sync';
+import CardRepository from "../../libs/CardRepository.js";
+import ArtRepository from "../../libs/ArtRepository.js";
+import ImageCell from "../../components/CardImageCell.astro";
 
-const cardCsv = readFileSync('./src/cards/characters.csv', { encoding: 'utf-8' });
-const cards = parse(cardCsv, {
-    columns: true,
-    skip_empty_lines: true
-});
-
-const cardArt = await Astro.glob('../../cards/images/*.png');
-
-/** When building for real, the filenames will contain a cache-buster segment, e.g. Set1_Chara001.3c3d8a15.png */
-const cacheBusterExtractor = /(\..*)\./;
-const fileNameExtractor = /\/([^\/]*\.png)/;
-
-const artCollection = Object.fromEntries(cardArt.map((art) => {
-    const imageName = art.default.src.match(fileNameExtractor)[1].replace(cacheBusterExtractor, '.');
-
-    return [imageName, art.default];
-}));
+const cards = CardRepository.allCharacter();
+const artCollection = ArtRepository.loadAll(await Astro.glob('../../cards/images/*.png'));
 ---
-<SiteLayout title="Card Database" wide=true>
-    <h1 class="sr-only">Cards</h1>
+<SiteLayout title="Character Cards" wide=true>
+    <h1 class="sr-only">Character Cards</h1>
     <div class="overflow-x-auto">
         <table id="cards" class="text-sm">
             <thead>
@@ -43,21 +28,27 @@ const artCollection = Object.fromEntries(cardArt.map((art) => {
             </tr>
             </thead>
             <tbody>
-                { cards.map((card) => <CardRow card={card} artCollection={artCollection} />) }
+                { cards.map((card) => {
+                    return <tr>
+                        <td>{card.TITLE}</td>
+                        <td>{card.subtitle}</td>
+                        <td>{card.Power}</td>
+                        <td>{card['Enter Cost']}</td>
+                        <td>{card.Tags}</td>
+                        <td>{card['Game Text']}</td>
+                        <td>{card.Flavorlogue}</td>
+                        <td>{card.Stars}</td>
+                        <td>{card['Art Credit']}</td>
+                        <td>
+                            <ImageCell card={card} artCollection={artCollection} />
+                        </td>
+                        <td>{card['Set Release']}</td>
+                        <td>{card['Card Number']}</td>
+                    </tr>
+                }) }
             </tbody>
         </table>
     </div>
 </SiteLayout>
 
-<script>
-    import { DataTable, addColumnFilter } from "simple-datatables";
-
-    const dt = new DataTable('#cards', {
-        paging: false,
-    });
-
-    addColumnFilter(dt);
-
-    document.querySelector('.datatable-search .datatable-input').setAttribute('aria-label', 'Search');
-    document.querySelector('nav.datatable-pagination').setAttribute('aria-label', 'Card Page');
-</script>
+<script src="./initialize-dt.js"></script>
