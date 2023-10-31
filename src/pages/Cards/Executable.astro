@@ -1,0 +1,50 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import CardRepository from "../../libs/CardRepository.js";
+import ArtRepository from "../../libs/ArtRepository.js";
+import ImageCell from "../../components/CardImageCell.astro";
+
+const cards = CardRepository.allExecutable();
+const artCollection = ArtRepository.loadAll(await Astro.glob('../../cards/images/*.png'));
+---
+<SiteLayout title="Inventory Cards" wide=true>
+    <h1 class="sr-only">Inventory Cards</h1>
+    <div class="overflow-x-auto">
+        <table id="cards" class="text-sm">
+            <thead>
+            <tr>
+                <th scope="col">TITLE</th>
+                <th scope="col">subtitle</th>
+                <th scope="col">Enter Cost</th>
+                <th scope="col" data-hidden="true">Game Text</th>
+                <th scope="col" data-hidden="true">Flavorlogue</th>
+                <th scope="col" data-type="number">Stars</th>
+                <th scope="col">Art Credit</th>
+                <th scope="col">Pictures</th>
+                <th scope="col" data-hidden="true">Set Release</th>
+                <th scope="col" data-hidden="true">Card Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            { cards.map((card) => {
+                return <tr>
+                    <td>{card.TITLE}</td>
+                    <td>{card.subtitle}</td>
+                    <td>{card['Enter Cost']}</td>
+                    <td>{card['Game Text']}</td>
+                    <td>{card.Flavorlogue}</td>
+                    <td>{card.Stars}</td>
+                    <td>{card['Art Credit']}</td>
+                    <td>
+                        <ImageCell card={card} artCollection={artCollection} />
+                    </td>
+                    <td>{card['Set Release']}</td>
+                    <td>{card['Card Number']}</td>
+                </tr>
+            }) }
+            </tbody>
+        </table>
+    </div>
+</SiteLayout>
+
+<script src="./initialize-dt.js"></script>

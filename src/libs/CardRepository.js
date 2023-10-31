@@ -19,7 +19,7 @@ export default {
     },
 
     allExecutable() {
-        return csvLoader('./src/cards/executable.csv');
+        return csvLoader('./src/cards/executables.csv');
     },
 
     allPlanets() {

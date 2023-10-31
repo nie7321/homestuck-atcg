@@ -1,8 +1,6 @@
 interface Card {
     TITLE: string;
     subtitle: string;
-    Power: string;
-    'Enter Cost': string;
     'Game Text': string;
     Flavorlogue: string;
     Stars: string;
@@ -14,11 +12,13 @@ interface Card {
 }
 
 interface CharacterCard extends Card {
+    'Enter Cost': string;
+    Power: string;
     Tags: string;
 }
 
 interface InventoryCard extends Card {
-    // Nothing extra at this time
+    'Enter Cost': string;
 }
 
 interface ExecutableCard extends Card {
@@ -27,6 +27,7 @@ interface ExecutableCard extends Card {
 
 interface PlanetCard extends Card {
     'Max Damage': string,
+    Power: string;
     'Draw Boost': string,
 }
 
