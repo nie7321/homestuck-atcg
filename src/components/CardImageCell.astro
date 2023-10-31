@@ -14,10 +14,8 @@ interface Props {
 const { card, artCollection } = Astro.props;
 
 // Most cards have 1, but planets have 2, so we're using an array to deal with em.
-let cardArt = [
-    artCollection[card.Picture],
-    // artCollection[`${cardIdentifier}b.png`],
-];
+const pictureField = card.Pictures ?? card.Picture ?? '';
+let cardArt = pictureField.split('//').map((pic) => artCollection[pic.trim()]);
 
 cardArt = await Promise.all(
     cardArt.map(async (art) => {

@@ -5,7 +5,6 @@ interface Card {
     Flavorlogue: string;
     Stars: string;
     'Art Credit': string;
-    Picture: string;
     'Set Release': string;
     'Card Number': string;
     [propName: any]: any
@@ -15,20 +14,23 @@ interface CharacterCard extends Card {
     'Enter Cost': string;
     Power: string;
     Tags: string;
+    Picture: string;
 }
 
 interface InventoryCard extends Card {
     'Enter Cost': string;
+    Picture: string;
 }
 
 interface ExecutableCard extends Card {
-    // Nothing extra at this time
+    Picture: string;
 }
 
 interface PlanetCard extends Card {
     'Max Damage': string,
     Power: string;
     'Draw Boost': string,
+    Pictures: string;
 }
 
 declare type _default = {
