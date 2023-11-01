@@ -15,7 +15,7 @@
     "@astrojs/tailwind": "^5.0.2",
     "@types/alpinejs": "^3.0.0",
     "alpinejs": "^3.0.0",
-    "astro": "^3.3.2",
+    "astro": "^3.4.0",
     "csv-parse": "^5.5.2",
     "sass": "^1.69.4",
     "simple-datatables": "^8.0.0",
